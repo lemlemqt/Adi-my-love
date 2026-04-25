@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>For My Love 💖</title>
+
+<style>
+
+body{
+font-family: Arial, sans-serif;
+background:#ffe6f2;
+text-align:center;
+padding-top:80px;
+}
+
+.box{
+background:white;
+padding:30px;
+border-radius:15px;
+width:340px;
+margin:auto;
+box-shadow:0 0 10px rgba(0,0,0,0.2);
+margin-bottom:20px;
+}
+
+input, textarea{
+padding:10px;
+font-size:16px;
+margin-top:10px;
+width:85%;
+border-radius:8px;
+border:1px solid #ccc;
+}
+
+button{
+padding:10px 20px;
+margin-top:10px;
+border:none;
+border-radius:8px;
+background:#ff4d88;
+color:white;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+background:#ff2f73;
+}
+
+.hint{
+background:#999;
+}
+
+#letter{
+display:none;
+white-space:pre-line;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- PASSCODE PAGE -->
+
+<div class="box" id="passcodeBox">
+
+<h2>🔒 Secret Page</h2>
+
+<p>Enter the passcode to continue</p>
+
+<input type="password" id="passcode" placeholder="Enter passcode">
+
+<br>
+
+<button onclick="checkPass()">Enter</button>
+
+<button class="hint" onclick="showHint()">Hint</button>
+
+<p id="passMsg"></p>
+
+<p id="hintText"></p>
+
+</div>
+
+
+<!-- ALGEBRA QUESTION -->
+
+<div class="box" id="mathBox" style="display:none;">
+
+<h2>One more challenge 🤓</h2>
+
+<p>Solve for x:</p>
+
+<p><b>3x = 45</b></p>
+
+<input type="number" id="answer" placeholder="Your answer">
+
+<br>
+
+<button onclick="checkMath()">Submit</button>
+
+<p id="mathMsg"></p>
+
+</div>
+
+
+<!-- LOVE QUESTION -->
+
+<div class="box" id="loveBox" style="display:none;">
+
+<h2>Final Question 💕</h2>
+
+<p>Whose your lolovee? 🥺</p>
+
+<input type="text" id="loveAnswer" placeholder="Type the name">
+
+<br>
+
+<button onclick="checkLove()">Submit</button>
+
+<p id="loveMsg"></p>
+
+</div>
+
+
+<!-- LETTER -->
+
+<div class="box" id="letter">
+
+<h2>💖 For My Adi 💖</h2>
+
+<p>
+
+Hi love Happy 6th Monthsarry, napaka thankful ko na ikaw yung babae para sakin kasi lahat nagagawa mo umiiwas ka sa mga ayaw ko sobrang thankyou talaga love lalo na wala akong gaanong time pero anjan ka parin patuloy ma iniintindi ako thankyou love ha and lagi mong sinasabi sakin na wag kitang iiwan dahil sa ugaling meron ka ang sagot ko don yes love hindi po kita iiwan hanggat kaya ko gagawin ko lahat para sayo at may mga pangarap pa tayong tutuparin diba so yun lang iloveyousomuch love  💖🥰
+
+</p>
+
+</div>
+
+
+<!-- REPLY BOX -->
+
+<div class="box" id="replyBox" style="display:none;">
+
+<h3>Your turn 💌</h3>
+
+<p>Add your reply here</p>
+
+<textarea id="replyMessage" rows="4"></textarea>
+
+<br>
+
+<button onclick="sendReply()">Send</button>
+
+</div>
+
+
+<script>
+
+
+function checkPass(){
+
+let pass = document.getElementById("passcode").value;
+
+if(pass == "42626"){
+
+document.getElementById("passcodeBox").style.display="none";
+
+document.getElementById("mathBox").style.display="block";
+
+}
+
+else{
+
+document.getElementById("passMsg").innerHTML="Wrong passcode 😭 try again.";
+
+}
+
+}
+
+
+
+function showHint(){
+
+document.getElementById("hintText").innerHTML="Hint: anniversary date 💡";
+
+}
+
+
+
+function checkMath(){
+
+let ans = document.getElementById("answer").value;
+
+if(ans == "15"){
+
+document.getElementById("mathBox").style.display="none";
+
+document.getElementById("loveBox").style.display="block";
+
+}
+
+else{
+
+document.getElementById("mathMsg").innerHTML="Hmm that's not correct 🤔 try again.";
+
+}
+
+}
+
+
+
+function checkLove(){
+
+let love = document.getElementById("loveAnswer").value.toLowerCase();
+
+if(love == "lemlem"){
+
+document.getElementById("loveBox").style.display="none";
+
+document.getElementById("letter").style.display="block";
+
+document.getElementById("replyBox").style.display="block";
+
+}
+
+else{
+
+document.getElementById("loveMsg").innerHTML="Hmm that's not the right answer 😭";
+
+}
+
+}
+
+
+
+function sendReply(){
+
+let message = document.getElementById("replyMessage").value;
+
+if(message.trim() === ""){
+
+alert("Write something first 😭");
+
+return;
+
+}
+
+let email = "somayukihira2626@gmail.com";
+
+let subject = "Reply to your monthsary letter 💖";
+
+let body = message;
+
+window.location.href =
+
+"mailto:"+email+"?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(body);
+
+}
+
+
+
+</script>
+
+</body>
+</html>
